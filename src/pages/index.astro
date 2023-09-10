@@ -8,8 +8,8 @@ import * as AstroFeather from "astro-feather";
   <main>
     <MainBanner />
 
-    <div class="max-w-screen-xl flex flex-wrap  mx-auto py-4">
-      <div>
+    <div class="max-w-screen-xl flex flex-wrap justify-between mx-auto py-4">
+      <div class="w-1/5 pr-5">
         <a
           href={"/"}
           class="rounded-xl flex h-20 items-center justify-between p-4 bg-primary text-white"
@@ -19,45 +19,87 @@ import * as AstroFeather from "astro-feather";
         </a>
         <a
           href={"/"}
-          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+          class="mt-3 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
         >
           <p class="font-extrabold text-md italic">NEW IN</p>
           <AstroFeather.ZapIcon />
         </a>
         <a
           href={"/"}
-          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+          class="mt-3 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
         >
           <p class="font-extrabold text-md italic">COATS</p>
           <AstroFeather.ActivityIcon />
         </a>
         <a
           href={"/"}
-          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+          class="mt-3 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
         >
           <p class="font-extrabold text-md italic">TOPS</p>
           <AstroFeather.ActivityIcon />
         </a>
         <a
           href={"/"}
-          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+          class="mt-3 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
         >
           <p class="font-extrabold text-md italic">BOTTOMS</p>
           <AstroFeather.ActivityIcon />
         </a>
         <a
           href={"/"}
-          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+          class="mt-3 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
         >
           <p class="font-extrabold text-md italic">JEWELLERY</p>
           <AstroFeather.ActivityIcon />
         </a>
       </div>
 
-	  <div class="w-33">
-		<h2 class="font-extrabold italic text-4xl">HOME</h2>
-		<p class="font-bold text-sm">View More</p>
-	  </div>
+      <div class="w-4/5 pl-5">
+        <div>
+          <h2 class="font-extrabold italic text-4xl">HOME</h2>
+          <p class="font-bold text-sm">View More</p>
+        </div>
+
+        <div class="flex flex-wrap mt-5">
+          <a
+            href={"/"}
+            class="rounded-xl flex h-12 items-center justify-between px-6 py-4 border-gray-light border-2"
+          >
+            <AstroFeather.SlidersIcon size={18} />
+            <p class="ml-5 font-bold text-md">Sort</p>
+          </a>
+          <a
+            href={"/"}
+            class="ml-5 rounded-xl flex h-12 items-center justify-between px-6 py-4 border-gray-light border-2"
+          >
+            <p class="font-bold text-md">Product Type</p>
+          </a>
+          <a
+            href={"/"}
+            class="ml-5 rounded-xl flex h-12 items-center justify-between px-6 py-4 border-gray-light border-2"
+          >
+            <p class="font-bold text-md">Style</p>
+          </a>
+          <a
+            href={"/"}
+            class="ml-5 rounded-xl flex h-12 items-center justify-between px-6 py-4 border-gray-light border-2"
+          >
+            <p class="font-bold text-md">Size</p>
+          </a>
+          <a
+            href={"/"}
+            class="ml-5 rounded-xl flex h-12 items-center justify-between px-6 py-4 border-gray-light border-2"
+          >
+            <p class="font-bold text-md">Color</p>
+          </a>
+          <a
+            href={"/"}
+            class="ml-5 rounded-xl flex h-12 items-center justify-between px-6 py-4 border-gray-light border-2"
+          >
+            <p class="font-bold text-md">Price Range</p>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
