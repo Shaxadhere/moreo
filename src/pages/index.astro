@@ -1,7 +1,37 @@
 ---
+export const prerender = true;
 import MainBanner from "../components/MainBanner.astro";
 import Layout from "../layouts/Layout.astro";
 import * as AstroFeather from "astro-feather";
+import WooCommerceAPI from "woocommerce-api";
+
+var WooCommerce = new WooCommerceAPI({
+  url: "https://server.moreo.pk",
+  consumerKey: "ck_072ac448907ae431ff878e1cc601852cc406e44f",
+  consumerSecret: "cs_2a1ac9efd9dd38f05c10c520fccdf9bdcdd328af",
+  wpAPI: true,
+  version: "wc/v2",
+});
+
+let products = null;
+WooCommerce.getAsync("products").then(function (result) {
+  products = JSON.parse(result.toJSON().body);
+});
+
+// let products = [];
+// fetch("https://server.moreo.pk/wc/v3/products")
+//   .then((res) => res.json())
+//   .then((data) => (products = data))
+//   .catch((err) => console.log(err));
+
+// const personResponse = await fetch("https://server.moreo.pk/wp-json/wc/v3/products", {
+
+// });
+// const personData = await personResponse.json();
+// const randomPerson = personData.results[0];
+// products = await products.json()
+
+// console.log(products)
 ---
 
 <Layout title="Welcome to Astro.">
@@ -99,29 +129,33 @@ import * as AstroFeather from "astro-feather";
             <p class="font-bold text-md">Price Range</p>
           </a>
         </div>
-
-        <div class="flex flex-wrap mt-5">
-          <div
-            class="w-1/4
- 			rounded-xl
- 			flex
- 			flex-col
- 			items-center
- 			justify-center
- 			p-4
- 			bg-gray-light
- 			text-black
- 			hover:bg-primary
- 			hover:text-white
- 			bg-[url('https://moreo.pk/uploads/product-images/oP3jhzLl0NUnHEmRXbJD.jpg')]
- 			bg-cover
- 			bg-center
+        {JSON.stringify(products)}
+        <!-- {
+          products.map((item) => (
+            <div class="flex flex-wrap mt-5">
+              <div
+                class="w-1/4
+			rounded-xl
+			flex
+			flex-col
+			items-center
+			justify-center
+			p-4
+			bg-gray-light
+			text-black
+			hover:bg-primary
+			hover:text-white
+			bg-[url('https://moreo.pk/uploads/product-images/oP3jhzLl0NUnHEmRXbJD.jpg')]
+			bg-cover
+			bg-center
 			h-96
 			"
-          >
-            sdsdsd
-          </div>
-        </div>
+              >
+                {item.name}
+              </div>
+            </div>
+          ))
+        } -->
       </div>
     </div>
   </main>
