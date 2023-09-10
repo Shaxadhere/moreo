@@ -1,10 +1,63 @@
 ---
-import MainBanner from '../components/MainBanner.astro';
-import Layout from '../layouts/Layout.astro';
+import MainBanner from "../components/MainBanner.astro";
+import Layout from "../layouts/Layout.astro";
+import * as AstroFeather from "astro-feather";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<MainBanner />
-	</main>
+  <main>
+    <MainBanner />
+
+    <div class="max-w-screen-xl flex flex-wrap  mx-auto py-4">
+      <div>
+        <a
+          href={"/"}
+          class="rounded-xl flex h-20 items-center justify-between p-4 bg-primary text-white"
+        >
+          <p class="font-extrabold text-md italic">HOME</p>
+          <AstroFeather.HomeIcon />
+        </a>
+        <a
+          href={"/"}
+          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+        >
+          <p class="font-extrabold text-md italic">NEW IN</p>
+          <AstroFeather.ZapIcon />
+        </a>
+        <a
+          href={"/"}
+          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+        >
+          <p class="font-extrabold text-md italic">COATS</p>
+          <AstroFeather.ActivityIcon />
+        </a>
+        <a
+          href={"/"}
+          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+        >
+          <p class="font-extrabold text-md italic">TOPS</p>
+          <AstroFeather.ActivityIcon />
+        </a>
+        <a
+          href={"/"}
+          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+        >
+          <p class="font-extrabold text-md italic">BOTTOMS</p>
+          <AstroFeather.ActivityIcon />
+        </a>
+        <a
+          href={"/"}
+          class="mt-3 w-56 h-20 rounded-xl flex items-center justify-between p-4 bg-gray-light text-black hover:bg-primary hover:text-white"
+        >
+          <p class="font-extrabold text-md italic">JEWELLERY</p>
+          <AstroFeather.ActivityIcon />
+        </a>
+      </div>
+
+	  <div class="w-33">
+		<h2 class="font-extrabold italic text-4xl">HOME</h2>
+		<p class="font-bold text-sm">View More</p>
+	  </div>
+    </div>
+  </main>
 </Layout>
