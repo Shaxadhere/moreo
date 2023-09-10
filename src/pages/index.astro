@@ -8,7 +8,6 @@ import { queryStringToObject } from "../helpers/queryHelper";
 import { products as dummyProducts } from "../constants/data";
 import Oauth1Helper from "../helpers/authHelper";
 
-let products = null;
 
 const queryString = queryStringToObject(new URL(Astro.url));
 
@@ -19,14 +18,15 @@ const request = {
 
 const authHeader = Oauth1Helper.getAuthHeaderForRequest(request);
 
-axios
-  .get(request.url, { headers: authHeader })
-  .then((res) => {
-    products = res.data
-  })
-  .catch((err) => {
-    console.log(err,"ERROR");
-  });
+const { data:products } = await axios.get(request.url, { headers: authHeader });
+// .then((res) => {
+//   products = res.data
+
+//   console.log(res.data,"DATA")
+// })
+// .catch((err) => {
+//   console.log(err,"ERROR");
+// });
 ---
 
 <Layout title="Explore your aesthetics">
@@ -144,7 +144,7 @@ axios
         <div class="flex flex-wrap mt-5 w-100">
           {JSON.stringify(products)}
           {
-            dummyProducts.map((item) => (
+            products?.map((item) => (
               <a
                 href={`/product?slug=${item.id}`}
                 class="w-1/3
